@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
-                <outlet property="actView" destination="S5x-uJ-lg7" id="Zti-cf-dxP"/>
                 <outlet property="countDownLabel" destination="VPn-6Q-zCS" id="Dc3-IP-1Bf"/>
                 <outlet property="pitchSemitonesLabel" destination="cCk-f9-Y24" id="D4z-rf-ynV"/>
                 <outlet property="pitchSemitonesSlide" destination="lZ0-VI-bba" id="Ktg-Z9-Ipm"/>
                 <outlet property="rateChangeLabel" destination="LNC-3W-ivF" id="R0E-15-AMp"/>
                 <outlet property="rateChangeSlide" destination="zh9-N0-Onb" id="BCL-Xz-Plf"/>
+                <outlet property="segController" destination="FVM-C3-a64" id="IFV-Kh-nr0"/>
                 <outlet property="tempoChangeLabel" destination="ZGi-iS-huN" id="47v-dL-6yI"/>
                 <outlet property="tempoChangeSlide" destination="DFh-Jf-7T9" id="8IU-fX-1CU"/>
                 <outlet property="view" destination="6" id="7"/>
@@ -93,15 +93,27 @@
                     <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="S5x-uJ-lg7">
-                    <rect key="frame" x="142" y="265" width="37" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                </activityIndicatorView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="FVM-C3-a64">
+                    <rect key="frame" x="22" y="233" width="275" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <segments>
+                        <segment title="WAV"/>
+                        <segment title="MP3"/>
+                        <segment title="AMR"/>
+                    </segments>
+                    <connections>
+                        <action selector="segChanged:" destination="-1" eventType="valueChanged" id="5kf-Fm-bFH"/>
+                    </connections>
+                </segmentedControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输出的音频格式:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="esi-bA-SDU">
+                    <rect key="frame" x="23" y="213" width="274" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

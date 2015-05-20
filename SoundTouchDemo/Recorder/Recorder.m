@@ -11,9 +11,9 @@
 //Email: chuliangliang300@sina.com
 
 #import "Recorder.h"
+#import "AudioDefine.h"
 
-
-#ifdef DEBUG
+#ifdef SOUNDTOUCH_DEBUG
 #define VSLog(log, ...) NSLog(log, ## __VA_ARGS__)
 #else
 #define VSLog(log, ...)
